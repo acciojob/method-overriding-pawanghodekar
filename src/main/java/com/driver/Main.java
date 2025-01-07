@@ -22,33 +22,32 @@ public class Main {
 }
 
 */
-// Task 1: Create a class A with a method named meth
+
+// Task 1: Create class A
 class A {
     public String meth() {
         return "Invoking method from class A";
     }
 }
 
-// Task 2: Create a class B which extends class A
+// Task 2: Create class B extending class A
 class B extends A {
+    // Task 4: Override method meth in class B
+    @Override
+    public String meth() {
+        return "Method is overridden in Extended class B";
+    }
 }
 
 public class Main {
     public static void main(String[] args) {
-        // Task 3: Create an object of class B and call method meth of class A with it
-        B bObj = new B();
-        System.out.println(bObj.meth()); // This should print: "Invoking method from class A"
+        // Task 3: Create object of class B and call method meth from class A
+        A objA = new A();
+        System.out.println(objA.meth());
 
-        // Task 4: Override method meth of class A in class B
-        class B extends A {
-            @Override
-            public String meth() {
-                return "Method is overridden in Extended class B";
-            }
-        }
-
-        // Task 5: Call this overridden method from object of class B
-        B bObjOverridden = new B();
-        System.out.println(bObjOverridden.meth()); // This should print: "Method is overridden in Extended class B"
+        // Create object of class B and call method meth
+        B objB = new B();
+        System.out.println(objB.meth());
     }
 }
+
